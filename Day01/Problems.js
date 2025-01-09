@@ -68,12 +68,31 @@ function isPalindrome(str) {
 console.log(isPalindrome("bob"));
 // Longest String in an Array
 // Write a function that takes an array of strings and returns the longest string.
+// declare a variable called longestStr and set the first string to this longestStr
+// iterate through the array of string
+// compare the longestStr to the next str using string.length if it is greater than update the longestr and lastly return the longestStr
+function findLongestStr(arr) {
+  let longestStr = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    const currentStr = arr[i];
+    if (currentStr.length > longestStr.length) {
+      longestStr = currentStr;
+    }
+  }
+  return longestStr;
+}
 
-// Factorial
-// Write a function that takes a number and returns its factorial.
+console.log(findLongestStr(["John", "Bob", "Mary", "Smith"]));
 
 // Count Words in a String
 // Write a function that takes a string and returns the number of words in the string.
+// split the string with spaces and filter out words empty string and filter out words without empty string
+// return the length
+function countWords(str) {
+  const word = str.split(" ").filter((word) => word !== " ");
+  return word.length;
+}
+console.log(countWords("Hello world! This is a test."));
 
 // Array Intersection
 // Write a function that takes two arrays and returns a new array containing only the common elements.
